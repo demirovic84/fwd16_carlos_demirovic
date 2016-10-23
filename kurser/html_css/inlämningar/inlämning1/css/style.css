@@ -1,0 +1,232 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*############################################
+#  BODY                                      #
+#############################################*/
+body {
+    background-image: url(../_images/o-SCOTLAND-facebook1.jpg);
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    background-size:cover;
+    background-position: center center;
+    margin: 0;
+}
+
+/*############################################
+#  NAV                                       #
+#############################################*/
+.flex-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+.flex-nav li {
+    flex-basis: 100%;
+}
+
+.flex-nav .social {
+    flex:1 1 25%;
+}
+
+a {
+    color:white;
+    font-weight: 100;
+    letter-spacing: 2px;
+    text-decoration: none;
+    background:rgba(0,0,0,0.2);
+    padding:15px 5px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    transition:all 0.5s;
+    text-shadow: 0px 0px 6px rgba(255,255,255,0.9);
+}
+
+a:hover {
+    background:rgba(0,0,0,0.3);
+}
+
+/*############################################
+#  NAV/MOBILE                                 #
+#############################################*/
+
+  .flex-nav li {
+    flex-basis:100%;
+  }
+  .wrapper {
+    display:flex;
+    flex-direction:column;
+  }
+
+  .toggleNav {
+    display: block;
+  }
+
+  .flex-nav ul {
+    display: none;
+  }
+   .flex-nav ul.open {
+      display:flex;
+    }
+
+
+/*############################################
+#  FLEX-CARDS                                #
+#############################################*/
+
+.card-wrap {
+  max-width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 60px auto;
+}
+
+.card {
+  background: seagreen;
+  opacity: 0.7;
+  border: 1px solid #f1f1f1;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+  min-width: 100%;
+  padding: 10px;
+  margin-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.card-title {
+  font-size: 120%; 
+  font-weight: 700;
+}
+
+.card-meta {
+  display: flex;
+}
+
+.card-category, .card-author {
+  flex: 1;
+}
+.card-title, .card-category, .card-author, p {
+    color: white;
+}
+
+.card-author {
+  text-align: right;
+}
+
+.card-bottom {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-img {
+  margin: 20px 0;
+  align-self: center;
+  width: 100% ;
+  height: auto;
+  display: block;
+}
+
+.card-button {
+  background: #FFD700;
+  color: seagreen;
+  border: none;
+  margin-top: auto;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.card:last-child { 
+  align-self: center;
+  width: 98%;
+  padding: 10px;
+  height: auto;
+  display: flex;
+  flex: 0 0 auto;
+  height: 40%;
+}
+
+
+
+
+/*############################################
+# MEDIA - DROPDOWN                           #
+#############################################*/
+@media all and (min-width: 500px) {
+  /* Döljer meny trigger för desktop */
+  
+  header > label {
+    display: none;
+  }
+  /* visar menyn för desktop */
+  
+  nav {
+    display: block;
+  }
+  nav ul {
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+}
+
+/*############################################
+# MEDIA - FLEXCARDS                          #
+#############################################*/
+@media screen and (min-width: 600px) {
+   .card {
+    width: 48%;
+    margin: 0 auto 2%;
+    min-width: 0;
+  }
+}
+
+/*############################################
+# MEDIA - MENU IPAD                          #
+#############################################*/
+@media all and (min-width:500px) {
+    .flex-nav li {
+    flex:1 1 50%;
+  }
+    .toggleNav{
+        display: none;
+    }
+    .flex-nav ul{
+        display: flex;
+    }
+}  
+
+/*############################################
+# MEDIA - MENU DESKTOP                       #
+#############################################*/
+@media all and (min-width:1000px) {
+   .flex-nax ul {
+    flex:1;
+    }
+
+    .flex-nav .social {
+    flex:1;
+    }
+
+    .flex-nav li {
+    flex:3;
+    }
+    .toggleNav{
+        display: none;
+    }
+}
+
+
