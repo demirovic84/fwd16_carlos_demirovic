@@ -50,23 +50,14 @@
 	height: auto;
 }
 .box-card-button {
-	background: $gold;
-	color: $black;
-	border: none;
-	margin-top: auto;
-	padding: 3px;
-	font-size: 20px;
+	@extend %btn; //PLACEHOLDER!! :)
 }
+
 
 
 @include respond-to('medium') {
 
-
-.box-card-button {
-	@extend.btn;
-}
- 
-.box-card {
+ .box-card {
 	width: 48%;
 	margin: 0 auto 2%;
 	min-width: 0;
