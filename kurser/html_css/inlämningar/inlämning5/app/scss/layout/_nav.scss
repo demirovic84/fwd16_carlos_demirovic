@@ -1,0 +1,189 @@
+*, *::before, *::after {
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Helvetica, Arial, sans-serif;
+  color:#222;
+}
+
+
+#menu {
+	display: none;
+	z-index: 100;
+	position: absolute;
+	flex-direction: column;
+	top: 0;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	li {
+		list-style-type: none;
+		position: relative;
+		flex: 1;
+	}
+}
+
+
+label:hover,
+input:checked ~ label{background:rgba(0,0,0,.3);}
+
+input:checked ~ label:after{
+  border-top:0 solid rgba(255,255,255,.5);
+  border-bottom:4px solid rgba(255,255,255,.5);
+  transition:border-top .1s, border-bottom .1s .1s;
+}
+
+/*hide the inputs*/
+input{display:none}
+
+.trigger:checked ~ #menu {
+  display: block;
+  position: relative;
+}
+
+
+#nav label {
+	position: relative;
+	display: block;
+	min-height: 2em;
+	padding: .45em;
+	font-size: 1.1em;
+	margin: 0;
+	cursor: pointer;
+	background: $black;
+	line-height: 2em;
+	color: $white;
+	&:after {
+		color: $white;
+		content: "";
+		position: absolute;
+		display: block;
+		top: 50%;
+		right: 5px;
+		width: 0;
+		height: 0;
+		border-top: 10px solid $red;
+		border-bottom: 0 solid $red;
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
+		transition: border-bottom .1s, border-top .1s .1s;
+	}
+}
+#menu label {
+	position: relative;
+	display: block;
+	min-height: 2em;
+	padding: .45em;
+	font-size: 1.1em;
+	margin: 0;
+	cursor: pointer;
+	background: $black_30;
+	line-height: 2em;
+	color: $white;
+	&:after {
+		position: absolute;
+		right: 1em;
+		font-size: 1.8em;
+		color: $white;
+	}
+}
+
+/*show the second levele menu of the selected voice*/
+input:checked ~ .submenu{
+  max-height:300px;
+  transition:max-height 0.5s ease-in;
+}
+input:checked ~ .submenu2{
+  max-height:300px;
+  transition:max-height 0.5s ease-in;
+}
+
+
+.submenu {
+	max-height: 0;
+	padding: 0;
+	overflow: hidden;
+	list-style-type: none;
+	box-shadow: 0 0 1px $black_30;
+	transition: max-height 0.5s ease-out;
+	min-width: 100%;
+	li a {
+		position: relative;
+		display: block;
+		padding: 12px;
+		text-decoration: none;
+		transition: background .3s;
+		white-space: nowrap;
+		&:hover {
+			background: $black_30;
+		}
+	}
+}
+.submenu2 {
+	max-height: 0;
+	padding: 0;
+	overflow: hidden;
+	list-style-type: none;
+	box-shadow: 0 0 1px $black_30;
+	transition: max-height 0.5s ease-out;
+	min-width: 100%;
+	li a {
+		display: flex;
+		padding: 12px;
+		text-decoration: none;
+		transition: background .3s;
+		white-space: nowrap;
+	}
+}
+
+.footer {
+	bottom: 0;
+	display: flex;
+}
+.foot1 {
+	@extend %footer-style;
+	background-color: $black_20;
+	li a {
+		color: $facebook-blue;
+	}
+}
+.foot2 {
+	@extend %footer-style;
+	background-color: $black_30;
+	li a {
+		color: $instagram;
+	}
+}
+.foot3 {
+	@extend %footer-style;
+	background-color: $black_50;
+	li a {
+		color: $twitter;
+	}
+}
+
+   
+@include respond-to('medium') {
+    
+#menu{
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+ }
+ .submenu{
+   position: absolute;
+
+ }
+
+}
+    
+@include respond-to('large') {
+
+#menu{
+  flex-direction: row;
+}
+
+
+}

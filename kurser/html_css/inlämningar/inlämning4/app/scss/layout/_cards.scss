@@ -55,12 +55,15 @@
 
 
 
+
 @include respond-to('medium') {
 
- .box-card {
+
+	.box-card {
 	width: 48%;
 	margin: 0 auto 2%;
 	min-width: 0;
+
 	}
 	  }   
 
