@@ -71,24 +71,24 @@ input{display:none}
 		transition: border-bottom .1s, border-top .1s .1s;
 	}
 }
-#menu label {
-	position: relative;
-	display: block;
-	min-height: 2em;
-	padding: .45em;
-	font-size: 1.1em;
-	margin: 0;
-	cursor: pointer;
-	background: $black_30;
-	line-height: 2em;
-	color: $white;
-	&:after {
-		position: absolute;
-		right: 1em;
-		font-size: 1.8em;
-		color: $white;
-	}
-}
+// #menu label {
+// 	position: relative;
+// 	display: block;
+// 	min-height: 2em;
+// 	padding: .45em;
+// 	font-size: 1.1em;
+// 	margin: 0;
+// 	cursor: pointer;
+// 	background: $black_30;
+// 	line-height: 2em;
+// 	color: $white;
+// 	&:after {
+// 		position: absolute;
+// 		right: 1em;
+// 		font-size: 1.8em;
+// 		color: $white;
+// 	}
+// }
 
 /*show the second levele menu of the selected voice*/
 input:checked ~ .submenu{
@@ -184,6 +184,7 @@ input:checked ~ .submenu2{
 #menu{
   flex-direction: row;
 }
+
 
 
 }
