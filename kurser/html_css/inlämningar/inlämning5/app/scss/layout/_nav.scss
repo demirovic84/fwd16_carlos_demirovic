@@ -138,31 +138,7 @@ input:checked ~ .submenu2{
 	}
 }
 
-.footer {
-	bottom: 0;
-	display: flex;
-}
-.foot1 {
-	@extend %footer-style;
-	background-color: $black_20;
-	li a {
-		color: $facebook-blue;
-	}
-}
-.foot2 {
-	@extend %footer-style;
-	background-color: $black_30;
-	li a {
-		color: $instagram;
-	}
-}
-.foot3 {
-	@extend %footer-style;
-	background-color: $black_50;
-	li a {
-		color: $twitter;
-	}
-}
+
 
    
 @include respond-to('medium') {

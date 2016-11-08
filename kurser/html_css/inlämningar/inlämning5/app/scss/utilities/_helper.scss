@@ -10,7 +10,7 @@ $nav: #6fc2da #4fb1ce #36aace #1e95b7 #0d7591 #086379 #025163 #004350;
 }
 //Loop
 //Colorful theme
-li:nth-child(7){background-color:#FFEB3B}
+
 li:nth-child(6){background-color:#CDDC39}
 li:nth-child(5){background-color:#8BC34A}
 li:nth-child(4){background-color:#4CAF50}
@@ -85,7 +85,6 @@ li:nth-child(1){background-color:#E91E63}
   display: flex;
   flex: 1;
   padding: 20px;
-  background-color: $transparant;
   justify-content: center;
   align-items: center;
   list-style-type: none;
