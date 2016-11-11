@@ -1,0 +1,30 @@
+.footer {
+	bottom: 0;
+	display: flex;
+}
+.foot1 {
+	@extend %footer-style;
+    background-color:map-get($colors, black_20); 
+
+	li a {
+    color:map-get($colors, facebook-blue); 
+
+	}
+}
+.foot2 {
+	@extend %footer-style;
+    background-color:map-get($colors, black_30); 
+
+	li a {
+    color:map-get($colors, instagram); 
+
+	}
+}
+.foot3 {
+	@extend %footer-style;
+    background-color:map-get($colors, black_50); 
+	  
+    li a {
+    color:map-get($colors, twitter);
+	}
+}

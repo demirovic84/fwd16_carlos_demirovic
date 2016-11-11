@@ -1,0 +1,145 @@
+*, *::before, *::after {
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Helvetica, Arial, sans-serif;
+  color:#222;
+}
+input#submenu_toggle{
+    display: none;
+    &:checked ~ ul {
+        display:block;
+    }
+}
+
+input#submenu_toggle2{
+    display: none;
+    &:checked ~ ul {
+    display: block;
+}
+}
+//Visar hamburger i mobil
+.bars{
+  display: block;
+  cursor: pointer;
+  margin: 10px;
+
+//Gömmer hamburger i desktop
+@include respond-to('large'){
+  display:none;
+    }
+    @include respond-to('medium'){
+  display:none;
+    }
+}
+
+
+
+
+//Döljer check
+input#my-menu {
+    display: none;
+    &:checked {
+//Visar menyn i mobil
+        ~ nav > ul {
+        display: flex;
+    }
+  }
+}
+
+nav ul {
+    display: none;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0;
+    list-style: none;
+
+    @include respond-to('large') {
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    @include respond-to('medium'){
+        display:flex;
+        flex-direction: row;
+        
+    
+    }
+    li {
+        flex: 1;
+        width: 100%;
+        display: block;
+        align-items: center;
+        justify-content: center;
+
+        @include respond-to('medium') {
+            flex: 1 45%;
+
+        }
+        @include respond-to('large') {
+            flex: 1;
+            display:flex;
+        }
+        a, label {
+            
+            cursor:pointer;
+            text-decoration: none;
+            text-align: left;
+            display: block;
+            text-transform: uppercase;
+            font-weight: bold;
+            flex: 1;
+            color:map-get($colors, gold);
+			padding: 15px 15px;
+            
+            &:hover {
+            color:map-get($colors, white);
+            }
+        }
+    }
+}
+
+
+
+
+ul li.dropdown {
+position: relative;
+}
+
+.bla1 li a{
+color:map-get($colors, black);
+}
+.dropdown label{
+color:map-get($colors, red);
+}
+
+
+nav ul ul {
+    display: none;
+    position: static;
+    z-index: 100;
+    width: 100%;
+    top: 48px;
+    margin-left: 20px;
+    @include respond-to('large'){
+        position:absolute;
+    }
+    li {
+
+        display: block;
+        text-transform: uppercase;
+        font-weight: bold;
+        
+    }
+    ul {
+        top: inherit;
+            width: 100%;
+
+        @include respond-to('medium'){
+        top: 0px;
+        left:7em;
+        }
+    }
+}
+

@@ -1,0 +1,51 @@
+.box-card{
+ background-color:map-get($colors, black_80); 
+ border: 1px map-get($colors, white); 
+ box-shadow: 1px 1px 2px map-get($colors, white); 
+ width: 100%;
+ padding: ($card-padding + 20) /2; //OPERATOR
+ margin-bottom: 5%;
+ display: flex;
+ flex-direction: column;
+ height: auto;
+ flex: 0 0 auto;
+   
+ @include respond-to('medium') {
+ width: 48%;
+ margin: 0 auto 2%;
+ min-width: 0;
+ }
+ }
+
+ 
+
+.box-card-wrap{
+@extend %flexcards;
+}
+.box-card-title {
+@extend %box-card-title;
+}
+.box-card-meta {
+@extend %box-card-meta;
+}
+.box-category {
+@extend %box-category;
+}
+.box-card-author {
+@extend %box-card-author;
+}
+.box-card-bottom {
+@extend %box-card-bottom;
+}
+.box-card-img{
+@extend %box-card-img;
+} 
+.box-card-button{
+@extend %box-card-button;
+}
+
+
+
+
+
+

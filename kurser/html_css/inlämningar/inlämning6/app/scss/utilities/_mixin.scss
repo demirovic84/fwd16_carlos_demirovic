@@ -1,0 +1,71 @@
+///Mixin each
+///Breakpoints
+@mixin respond-to($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+ 
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+
+
+@mixin each($num, $type: false) {
+  @if $type == true {
+    &:nth-of-type(#{$num}n){
+      @content;
+    }
+  }
+  @else {
+    &:nth-child(#{$num}n){
+      @content;
+    }
+  }
+}
+
+///Each
+.box-card{
+@include each(5) {
+    width:98%;
+    
+}
+  ///For loop
+@for $i from 1 through 10 {
+  &:nth-child(#{$i}) {
+    color: hsl(310  / $i, 70%, 88%);
+    background: hsl(307  / $i, 80%, 47%);
+      
+    }
+  }
+
+}
+
+
+
+// @mixin cards ($cardnumber){
+// @extend %flexcards;
+
+// }
+
+
+
+
+
+// @mixin page-bg{
+//   background-image: url("../images/min.jpg");
+//   background-position: center center;
+//   background-repeat: no-repeat;
+//   background-attachment: fixed;
+//   background-size: cover;
+//   margin: 0;
+//   font-family: dosis;
+  
+// }
