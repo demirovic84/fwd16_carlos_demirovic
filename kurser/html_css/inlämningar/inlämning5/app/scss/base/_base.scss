@@ -18,12 +18,9 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  background-color:map-get($colors, black); 
   margin: 0;
   font-family: dosis;
 
 }
 
-// body{
-// @include page-bg 
-// url("../images/min.jpg");
-// }

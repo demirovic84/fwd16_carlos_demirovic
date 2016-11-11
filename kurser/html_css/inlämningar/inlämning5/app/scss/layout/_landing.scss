@@ -1,52 +1,49 @@
 .landingcontainer{
-text-align: center;
-display: flex;
-margin-top:0;
-align-items: center;
-justify-content: center;
-background: $nocolor;
-height: 100%;
+  text-align: center;
+  display: flex;
+  margin-top:0;
+  align-items: center;
+  justify-content: center;
+  background:map-get($colors, nocolor); 
+  height: 100%;
 
 a{
-    margin-top: 0;
+  margin-top: 0;
   text-decoration: none;
-
-  background: $nocolor;
-
+  background:map-get($colors, nocolor); 
   &:hover{
-
-      background: $nocolor;
+  background:map-get($colors, nocolor); 
   }
 }
 
 .smiley{
  
-    color: $cyan;
-    font-size: 40px;
+  color:map-get($colors, cyan); 
+  font-size: 40px;
 
 }
 
 #p1, #p2, #p3{
-color: $white;
-font-family: Arial, Helvetica, sans-serif;
-text-align: center;
+  color:map-get($colors, white); 
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
 
 
 
 }
 
 #p1{
-    font-size: 2.5em;
-    text-transform: uppercase;
+  font-size: 2.5em;
+  text-transform: uppercase;
 }
 
 #p2{
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 #p3{
-    font-size: 1em;
-    color: $cyan;
+  font-size: 1em;
+  color:map-get($colors, cyan); 
 }
 }
 

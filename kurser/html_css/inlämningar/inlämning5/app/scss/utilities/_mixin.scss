@@ -31,9 +31,19 @@
   }
 }
 
+///Each
 .box-card{
-  @include each(5) {
+@include each(5) {
     width:98%;
+    
+}
+  ///For loop
+@for $i from 1 through 10 {
+  &:nth-child(#{$i}) {
+    color: hsl(310  / $i, 70%, 88%);
+    background: hsl(307  / $i, 80%, 47%);
+      
+    }
   }
 
 }

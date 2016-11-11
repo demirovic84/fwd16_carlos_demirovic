@@ -7,160 +7,139 @@ body{
   font-family:Helvetica, Arial, sans-serif;
   color:#222;
 }
-
-
-#menu {
-	display: none;
-	z-index: 100;
-	position: absolute;
-	flex-direction: column;
-	top: 0;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	li {
-		list-style-type: none;
-		position: relative;
-		flex: 1;
-	}
+input#submenu_toggle{
+    display: none;
+    &:checked ~ ul {
+        display:block;
+    }
 }
 
-
-label:hover,
-input:checked ~ label{background:rgba(0,0,0,.3);}
-
-input:checked ~ label:after{
-  border-top:0 solid rgba(255,255,255,.5);
-  border-bottom:4px solid rgba(255,255,255,.5);
-  transition:border-top .1s, border-bottom .1s .1s;
+input#submenu_toggle2{
+    display: none;
+    &:checked ~ ul {
+    display: block;
 }
-
-/*hide the inputs*/
-input{display:none}
-
-.trigger:checked ~ #menu {
+}
+//Visar hamburger i mobil
+.bars{
   display: block;
-  position: relative;
-}
+  cursor: pointer;
+  margin: 10px;
 
-
-#nav label {
-	position: relative;
-	display: block;
-	min-height: 2em;
-	padding: .45em;
-	font-size: 1.1em;
-	margin: 0;
-	cursor: pointer;
-	background: $black;
-	line-height: 2em;
-	color: $white;
-	&:after {
-		color: $white;
-		content: "";
-		position: absolute;
-		display: block;
-		top: 50%;
-		right: 5px;
-		width: 0;
-		height: 0;
-		border-top: 10px solid $red;
-		border-bottom: 0 solid $red;
-		border-left: 5px solid transparent;
-		border-right: 5px solid transparent;
-		transition: border-bottom .1s, border-top .1s .1s;
-	}
-}
-// #menu label {
-// 	position: relative;
-// 	display: block;
-// 	min-height: 2em;
-// 	padding: .45em;
-// 	font-size: 1.1em;
-// 	margin: 0;
-// 	cursor: pointer;
-// 	background: $black_30;
-// 	line-height: 2em;
-// 	color: $white;
-// 	&:after {
-// 		position: absolute;
-// 		right: 1em;
-// 		font-size: 1.8em;
-// 		color: $white;
-// 	}
-// }
-
-/*show the second levele menu of the selected voice*/
-input:checked ~ .submenu{
-  max-height:300px;
-  transition:max-height 0.5s ease-in;
-}
-input:checked ~ .submenu2{
-  max-height:300px;
-  transition:max-height 0.5s ease-in;
-}
-
-
-.submenu {
-	max-height: 0;
-	padding: 0;
-	overflow: hidden;
-	list-style-type: none;
-	box-shadow: 0 0 1px $black_30;
-	transition: max-height 0.5s ease-out;
-	min-width: 100%;
-	li a {
-		position: relative;
-		display: block;
-		padding: 12px;
-		text-decoration: none;
-		transition: background .3s;
-		white-space: nowrap;
-		&:hover {
-			background: $black_30;
-		}
-	}
-}
-.submenu2 {
-	max-height: 0;
-	padding: 0;
-	overflow: hidden;
-	list-style-type: none;
-	box-shadow: 0 0 1px $black_30;
-	transition: max-height 0.5s ease-out;
-	min-width: 100%;
-	li a {
-		display: flex;
-		padding: 12px;
-		text-decoration: none;
-		transition: background .3s;
-		white-space: nowrap;
-	}
+//Gömmer hamburger i desktop
+@include respond-to('large'){
+  display:none;
+    }
+    @include respond-to('medium'){
+  display:none;
+    }
 }
 
 
 
-   
-@include respond-to('medium') {
+
+//Döljer check
+input#my-menu {
+    display: none;
+    &:checked {
+//Visar menyn i mobil
+        ~ nav > ul {
+        display: flex;
+    }
+  }
+}
+
+nav ul {
+    display: none;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0;
+    list-style: none;
+
+    @include respond-to('large') {
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    @include respond-to('medium'){
+        display:flex;
+        flex-direction: row;
+        
     
-#menu{
-  display: flex;
-  flex: 1;
-  flex-direction: row;
- }
- .submenu{
-   position: absolute;
+    }
+    li {
+        flex: 1;
+        width: 100%;
+        display: block;
+        align-items: center;
+        justify-content: center;
 
- }
+        @include respond-to('medium') {
+            flex: 1 45%;
 
+        }
+        @include respond-to('large') {
+            flex: 1;
+            display:flex;
+        }
+        a, label {
+            
+            cursor:pointer;
+            text-decoration: none;
+            text-align: left;
+            display: block;
+            text-transform: uppercase;
+            font-weight: bold;
+            flex: 1;
+            color:map-get($colors, gold);
+			padding: 15px 15px;
+            
+            &:hover {
+            color:map-get($colors, white);
+            }
+        }
+    }
 }
-    
-@include respond-to('large') {
 
-#menu{
-  flex-direction: row;
+
+
+
+ul li.dropdown {
+position: relative;
+}
+
+.bla1 li a{
+color:map-get($colors, black);
+}
+.dropdown label{
+color:map-get($colors, red);
 }
 
 
+nav ul ul {
+    display: none;
+    position: static;
+    z-index: 100;
+    width: 100%;
+    top: 48px;
+    margin-left: 20px;
+    @include respond-to('large'){
+        position:absolute;
+    }
+    li {
 
+        display: block;
+        text-transform: uppercase;
+        font-weight: bold;
+        
+    }
+    ul {
+        top: inherit;
+            width: 100%;
+
+        @include respond-to('medium'){
+        top: 0px;
+        left:7em;
+        }
+    }
 }
+
