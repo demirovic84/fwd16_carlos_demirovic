@@ -1,145 +1,227 @@
-*, *::before, *::after {
-  box-sizing:border-box;
+
+
+/*border box för hela sidan*/
+html {
+  box-sizing: border-box;
 }
 
-body{
-  margin:0;
-  font-family:Helvetica, Arial, sans-serif;
-  color:#222;
-}
-input#submenu_toggle{
-    display: none;
-    &:checked ~ ul {
-        display:block;
-    }
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
-input#submenu_toggle2{
-    display: none;
-    &:checked ~ ul {
-    display: block;
-}
-}
-//Visar hamburger i mobil
 .bars{
   display: block;
   cursor: pointer;
   margin: 10px;
-
-//Gömmer hamburger i desktop
+    
 @include respond-to('large'){
   display:none;
     }
-    @include respond-to('medium'){
-  display:none;
+// @include respond-to('medium'){
+//   display:none;
+//     }
+}
+
+input#show-menu {
+    display: none;
+    &:checked {
+        ~ nav > ul {
+            display: flex;
+        }
     }
 }
 
+h4{
+font-size: 1.5em;
+}
+.desc{
+text-align: left;
+margin-left: -3px;
+}
+
+.megamenu{
+    text-transform: uppercase;
+    background-color:map-get($colors, black);
+    box-shadow: 5px 5px 20px  map-get($colors , twitter);
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;
 
 
-
-//Döljer check
-input#my-menu {
-    display: none;
-    &:checked {
-//Visar menyn i mobil
-        ~ nav > ul {
-        display: flex;
+    display:none;
+    // position: static;
+    top:48px;
+    
+    @include respond-to('large'){
+    position:absolute;
+    width:70em;
+    min-height: 30em;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-around;
+       ul{
+          flex:none;
+          width:20%;
+        li{
+          font-size:1em;
+          
+         a{
+          color: map-get($colors, red);
+          flex:none;
+          font-size: 1em;
+      
+        }
+      }
     }
   }
 }
 
-nav ul {
+nav > ul {
+    background-color:map-get($colors, twitter);
     display: none;
     flex-direction: column;
-    margin: 0px;
+    justify-content: center;
+    margin: 0;
     padding: 0;
     list-style: none;
-
-    @include respond-to('large') {
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
-    @include respond-to('medium'){
-        display:flex;
-        flex-direction: row;
-        
     
+    @include respond-to('medium') {
+    //flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    
+    //display: none;
     }
-    li {
+    
+    @include respond-to('large'){
+    display:flex;
+    flex-direction: row;
+    }
+        //Dropdown Titel
+        li {
+        color: map-get($colors, twitter);
         flex: 1;
         width: 100%;
+        flex-direction: column;
         display: block;
         align-items: center;
         justify-content: center;
-
+        
         @include respond-to('medium') {
-            flex: 1 45%;
-
+        flex: 1 45%;
+        text-align: center;
         }
+        
         @include respond-to('large') {
-            flex: 1;
-            display:flex;
+        flex: 1;
+        display:flex;
         }
-        a, label {
-            
-            cursor:pointer;
+        
+            a, label {
+
+            font-size: 1em;
             text-decoration: none;
-            text-align: left;
+            text-align: center;
             display: block;
             text-transform: uppercase;
             font-weight: bold;
             flex: 1;
-            color:map-get($colors, gold);
-			padding: 15px 15px;
+            color:map-get($colors, white);
+            padding: 14px 5px;
             
             &:hover {
-            color:map-get($colors, white);
-            }
-        }
-    }
+            color:map-get($colors, red);
+         }
+      }
+   }
 }
-
-
-
 
 ul li.dropdown {
 position: relative;
 }
 
-.bla1 li a{
-color:map-get($colors, black);
-}
-.dropdown label{
-color:map-get($colors, red);
-}
-
-
-nav ul ul {
+input#submenu_toggle{
     display: none;
-    position: static;
-    z-index: 100;
-    width: 100%;
-    top: 48px;
-    margin-left: 20px;
-    @include respond-to('large'){
-        position:absolute;
-    }
-    li {
-
-        display: block;
-        text-transform: uppercase;
-        font-weight: bold;
+    &:checked ~ .megamenu {
+        display:block;
+        text-align: center;
         
-    }
-    ul {
-        top: inherit;
-            width: 100%;
-
-        @include respond-to('medium'){
-        top: 0px;
-        left:7em;
+        @include respond-to('large'){
+            display:flex;
         }
     }
 }
 
+//Form
+#saveform {
+    border: nonr;
+}
+form > div > div,
+form > div > fieldset > div {
+  width: 100%;
+//   display:flex;
+//   flex:1;
+  flex-direction: center;
+
+
+}
+
+
+
+
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=password],
+textarea {
+  width: 100%;
+//   border-top: 2px solid map-get($colors , dark-blue);
+//   border-left: 2px solid map-get($colors , dark-blue);
+//   border-right: 2px solid map-get($colors , dark-blue);
+  border-bottom: 2px solid map-get($colors , dark-blue);
+}
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=password] {
+  width: 100%;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=url]:focus,
+input[type=password]:focus,
+textarea:focus {
+  outline: 3;
+}
+
+ @include respond-to('small') {
+  
+  form > div > label,
+  legend {
+	  width: 100%;
+   
+    margin: 0 0 5px 0;
+  }
+  form > div > div,
+  form > div > fieldset > div {
+    width: 90%;
+    text-align: left;
+   
+  }
+  input[type=text],
+  input[type=email],
+  input[type=url],
+  input[type=password],
+  textarea,
+  select {
+    width: 100%; 
+  }
+}
+ @include respond-to('large') {
+  form > div > label,
+	legend {
+  	text-align: left;
+    display:flex;
+    flex:1;
+   
+  }
+}

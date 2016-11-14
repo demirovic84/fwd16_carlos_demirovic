@@ -457,11 +457,12 @@ input[type="search"]::-webkit-search-decoration {
 // Define consistent border, margin, and padding.
 
 fieldset {
-  border: 1px solid #c0c0c0;
+  border:none;
   @if $lobotomized-owl == false {
-    margin: 0 2px;
+    
   }
-  padding: .35em .625em .75em;
+    padding: 15px;
+    margin-left: -14px;
 }
 
 // 1. Correct `color` not being inherited in IE 8/9/10/11.

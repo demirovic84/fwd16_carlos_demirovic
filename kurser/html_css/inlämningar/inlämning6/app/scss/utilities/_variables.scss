@@ -1,6 +1,8 @@
 ///Font import
 @import url(https://fonts.googleapis.com/css?family=Dosis:bold,extrabold);
 
+
+///Color-map
 $colors: (
 black: black,
 black_20: rgba(0,0,0,0.2),
@@ -19,19 +21,24 @@ cyan:cyan,
 transparant: rgba (0, 0, 0, 0.1,),
 red: red,
 purple:purple,
+turkos:#39b3d7,
+turkos2:#269abc,
+dark-blue:#333333,
 facebook-blue: #3b5998,
 instagram:#c4299e,
 twitter:#1da1f2
 );
 
-///fonts
+///Fonts
 $font_0: Helvetica;
 $font_1: Arial;
 $font_2: sans-serif;
 $font_2: dosis;
 
-
+///Operator
 $card-padding: 10px; ///OPERATOR
+
+
 
 ///Breakpoints
 $breakpoints: (
