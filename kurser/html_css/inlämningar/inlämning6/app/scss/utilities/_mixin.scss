@@ -19,8 +19,7 @@
 @mixin Opacity($opacity)
 {
     /// Kör en loop genom alla flexcards.
-    @for $i from 1 through $cardnumbers
-    {
+    @for $i from 1 through $cardnumbers {
         &:nth-child(#{$i})
         {   /// Sätter opaciteten.
             opacity: $opacity;
@@ -29,47 +28,30 @@
 }
 
 
-//  /// Opacity
-//  /// @param {$loop} - loopar
-//  @mixin looping($opa)
-//  {
-//   @for $i from 1 through 9 {
-//     $opacity: hsl(307  / 80%, 47%);
-//   // background-color: map-get($colors , red );
+/// Each
+/// @param $num - Sätter första flexcard till 98%.
+///@param $type - Sätter en width på flexcard.
+@mixin Each($num, $type: false) {
+  @if $type == true {
+    &:nth-of-type(#{$num}){
+      @content;
+    }
+  }
+  @else {
+    &:nth-child(#{$num}){
+      @content;
+    }
+  }
+}
 
-//   &:nth-child(#{$i}) {
-//     //color: hsl(310  / $i, 70%, 88%);
-//     opa: $opa;
-//     // background-color: map-get($colors , red );
-//  }
-//  }
-//  }
-// ///Mixin for card
-// /// @param {num} $num - 
-// /// @param {type} $type - 
-// @mixin each($num, $type: false) {
-//   @if $type == true {
-//     &:nth-of-type(#{$num}){
-//       @content;
-//     }
-//   }
-//   @else {
-//     &:nth-child(#{$num}){
-//       @content;
-//     }
-//   }
-// .box-card {
-//   @include each(1) {
-//      flex:100%;
-//      margin-left: 15px;
-//      margin-right: 15px;
+///Each - Första flexcard 98% i bredd.
+.box-card{
+@include Each(1) {
+    width:98%;
+    
+}
 
-//   } 
-  
-// }  
-//   }
-
-
+}
 
 
 

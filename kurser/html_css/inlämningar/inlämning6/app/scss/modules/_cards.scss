@@ -4,15 +4,12 @@
 @extend %box-card;
 @include Opacity(0.8);
 
-}
-
-
 @include respond-to('medium') {
  width: 48%;
  margin: 0 auto 2%;
  min-width: 0;
 }
-
+}
 
 
 .box-card-wrap{
