@@ -26,8 +26,11 @@ turkos2:#269abc,
 dark-blue:#333333,
 facebook-blue: #3b5998,
 instagram:#c4299e,
-twitter:#1da1f2
+twitter:#1da1f2,
 );
+
+
+$hsl:hsl(345, 81%, 35%);
 
 ///Fonts
 $font_0: Helvetica;
@@ -37,6 +40,7 @@ $font_2: sans-serif;
 ///Operator
 $card-padding: 10px; ///OPERATOR
 
+$cardnumbers: 9;
 
 
 ///Breakpoints

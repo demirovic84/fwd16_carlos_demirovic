@@ -14,30 +14,61 @@
         + "Available breakpoints are: #{map-keys($breakpoints)}.";
   }
 }
-
-///Mixin for card
-@mixin each($num, $type: false) {
-  @if $type == true {
-    &:nth-of-type(#{$num}){
-      @content;
+/// Sätter en opacitet på flexcards med 0.8.
+/// @param $opacity - Opacity on flexcards.
+@mixin Opacity($opacity)
+{
+    /// Kör en loop genom alla flexcards.
+    @for $i from 1 through $cardnumbers
+    {
+        &:nth-child(#{$i})
+        {   /// Sätter opaciteten.
+            opacity: $opacity;
+        }
     }
-  }
-  @else {
-    &:nth-child(#{$num}){
-      @content;
-    }
-  }
 }
 
-.box-card {
-  @include each(1) {
-     flex:100%;
-     margin-left: 15px;
-     margin-right: 15px;
 
-     
-  }
-}
+//  /// Opacity
+//  /// @param {$loop} - loopar
+//  @mixin looping($opa)
+//  {
+//   @for $i from 1 through 9 {
+//     $opacity: hsl(307  / 80%, 47%);
+//   // background-color: map-get($colors , red );
+
+//   &:nth-child(#{$i}) {
+//     //color: hsl(310  / $i, 70%, 88%);
+//     opa: $opa;
+//     // background-color: map-get($colors , red );
+//  }
+//  }
+//  }
+// ///Mixin for card
+// /// @param {num} $num - 
+// /// @param {type} $type - 
+// @mixin each($num, $type: false) {
+//   @if $type == true {
+//     &:nth-of-type(#{$num}){
+//       @content;
+//     }
+//   }
+//   @else {
+//     &:nth-child(#{$num}){
+//       @content;
+//     }
+//   }
+// .box-card {
+//   @include each(1) {
+//      flex:100%;
+//      margin-left: 15px;
+//      margin-right: 15px;
+
+//   } 
+  
+// }  
+//   }
+
 
 
 
