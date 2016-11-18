@@ -13,13 +13,11 @@ html {
   display: block;
   cursor: pointer;
   margin: 10px;
-    
+
+//Döljer bars i desktop 
 @include respond-to('large'){
   display:none;
     }
-// @include respond-to('medium'){
-//   display:none;
-//     }
 }
 
 input#show-menu {
@@ -27,42 +25,61 @@ input#show-menu {
     &:checked {
         ~ nav > ul {
             display: flex;
+            flex: 1 1 100%;
         }
     }
 }
 
 h4{
-font-size: 1.5em;
+font-size: 1em;
+// margin-left: -30px;
+@include respond-to('large'){
+margin-left: 0px;
 }
+}
+h4 a{
+text-align: center;
+
+}
+
 .desc{
-text-align: left;
+text-align: center;
 margin-left: -3px;
 }
+
+
+
+.fa-arrow-circle-down{
+  color: map-get($colors , black);
+  margin-left: 7px;
+}
+
+
 
 .megamenu{
     text-transform: uppercase;
     background-color:map-get($colors, black);
-    box-shadow: 5px 5px 20px  map-get($colors , twitter);
+    box-shadow: 0px 2px 8px  map-get($colors , white);
     border-bottom-left-radius: 2%;
     border-bottom-right-radius: 2%;
-
-
     display:none;
-    // position: static;
-    top:48px;
+    position: static;
+    top:43px;
     
+
     @include respond-to('large'){
     position:absolute;
-    width:70em;
-    min-height: 30em;
-    flex-direction: row;
-    flex-wrap: wrap;
+    
+    width: 100%;
+    left: 0;
+  
     justify-content:space-around;
        ul{
           flex:none;
-          width:20%;
         li{
+        
           font-size:1em;
+          text-align: left;
           
          a{
           color: map-get($colors, red);
@@ -84,20 +101,23 @@ nav > ul {
     padding: 0;
     list-style: none;
     
+   
+    
     @include respond-to('medium') {
-    //flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     
-    //display: none;
     }
     
     @include respond-to('large'){
     display:flex;
+    flex: 1 1 100%;
     flex-direction: row;
+    padding: 15px;
     }
         //Dropdown Titel
         li {
+          
         color: map-get($colors, twitter);
         flex: 1;
         width: 100%;
@@ -105,28 +125,28 @@ nav > ul {
         display: block;
         align-items: center;
         justify-content: center;
+        text-align: center;
         
         @include respond-to('medium') {
-        flex: 1 45%;
         text-align: center;
         }
         
         @include respond-to('large') {
-        flex: 1;
+        flex: 1 1 100%;
         display:flex;
         }
         
             a, label {
 
             font-size: 1em;
+            text-align: center;
             text-decoration: none;
             text-align: center;
-            display: block;
-            text-transform: uppercase;
+¨            text-transform: uppercase;
             font-weight: bold;
             flex: 1;
             color:map-get($colors, white);
-            padding: 14px 5px;
+            padding: 5px 5px;
             
             &:hover {
             color:map-get($colors, red);
@@ -135,9 +155,6 @@ nav > ul {
    }
 }
 
-ul li.dropdown {
-position: relative;
-}
 
 input#submenu_toggle{
     display: none;
@@ -151,15 +168,23 @@ input#submenu_toggle{
     }
 }
 
+.fieldset{
+  align-content: center;
+
+  @include respond-to('large'){
+      margin-left: -11px;
+
+  
+  }
+}
 //Form
 #saveform {
-    border: nonr;
+    border: none;
 }
 form > div > div,
 form > div > fieldset > div {
   width: 100%;
-//   display:flex;
-//   flex:1;
+
   flex-direction: center;
 
 
@@ -174,9 +199,6 @@ input[type=url],
 input[type=password],
 textarea {
   width: 100%;
-//   border-top: 2px solid map-get($colors , dark-blue);
-//   border-left: 2px solid map-get($colors , dark-blue);
-//   border-right: 2px solid map-get($colors , dark-blue);
   border-bottom: 2px solid map-get($colors , dark-blue);
 }
 input[type=text],
@@ -204,18 +226,17 @@ textarea:focus {
   form > div > div,
   form > div > fieldset > div {
     width: 90%;
-    text-align: left;
    
   }
-  input[type=text],
-  input[type=email],
-  input[type=url],
-  input[type=password],
-  textarea,
-  select {
-    width: 100%; 
-  }
-}
+  // input[type=text],
+  // input[type=email],
+  // input[type=url],
+  // input[type=password],
+  // textarea,
+  // select {
+
+  // }
+ 
  @include respond-to('large') {
   form > div > label,
 	legend {
@@ -225,3 +246,7 @@ textarea:focus {
    
   }
 }
+ }
+
+
+    
