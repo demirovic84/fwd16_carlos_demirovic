@@ -65,6 +65,7 @@ margin-left: -3px;
     display:none;
     position: static;
     top:43px;
+    z-index: 9999;
     
 
     @include respond-to('large'){
