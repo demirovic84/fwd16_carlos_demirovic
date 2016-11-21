@@ -1,0 +1,67 @@
+///Breakpoints
+@mixin respond-to($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+ 
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+/// Sätter en opacitet på flexcards med 0.8.
+/// @param $opacity - Opacity on flexcards.
+@mixin Opacity($opacity)
+{
+    /// Kör en loop genom alla flexcards.
+    @for $i from 1 through $cardnumbers {
+        &:nth-child(#{$i})
+        {   /// Sätter opaciteten.
+            opacity: $opacity;
+        }
+    }
+}
+
+
+/// Each
+/// @param $num - Sätter första flexcard till 98%.
+///@param $type - Sätter en width på flexcard.
+@mixin each($num, $type: false) {
+  @if $type == true {
+    &:nth-of-type(#{$num}n){
+      @content;
+    }
+  }
+  @else {
+    &:nth-child(#{$num}n){
+      @content;
+    }
+  }
+}
+
+///Each
+.box-card{
+@include each(2) {
+    width:63.33%;
+    
+}
+//   ///For loop
+// @for $i from 1 through 10 {
+//   &:nth-child(#{$i}) {
+//     color: hsl(310  / $i, 70%, 88%);
+//     background: hsl(307  / $i, 80%, 47%);
+      
+//     }
+//   }
+
+}
+
+
+
+
+

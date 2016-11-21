@@ -1,0 +1,33 @@
+///Font import
+@import url(https://fonts.googleapis.com/css?family=Dosis:bold,extrabold);
+
+
+///Color-map
+$colors: (
+black: black,
+white: white,
+header:rgba(0, 0, 0, 0.6),
+brown:#916c55
+);
+
+
+
+///Fonts
+$font_0: Helvetica;
+$font_1: Arial;
+$font_2: sans-serif;
+
+///Operator
+$card-padding: 10px; ///OPERATOR
+
+$cardnumbers: 10;
+
+$total:4;
+
+
+///Breakpoints
+$breakpoints: (
+  'small':(min-width:  27.000em),
+  'medium':(min-width:  37.000em),
+  'large':(min-width: 62.000em)
+) !default;

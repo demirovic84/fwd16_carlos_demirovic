@@ -1,0 +1,52 @@
+
+ 
+.box-card {
+@extend %box-card;
+@include Opacity(0.8);
+
+// @include respond-to('medium') {
+//  width: 50%;
+//  margin: 0 auto 2%;
+//  min-width: 0;
+}
+@include respond-to('large') {
+  width: 63.33%;
+}
+
+.box-card-wrap{
+@extend %flexcards;
+}
+
+.box-card-title {
+@extend %box-card-title;
+}
+
+.box-card-meta {
+@extend %box-card-meta;
+}
+
+.box-category {
+@extend %box-category;
+}
+
+.box-card-author {
+@extend %box-card-author;
+}
+
+.box-card-bottom {
+@extend %box-card-bottom;
+}
+
+.box-card-img{
+@extend %box-card-img;
+} 
+
+.box-card-button{
+@extend %box-card-button;
+}
+
+
+
+
+
+

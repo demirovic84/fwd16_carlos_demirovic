@@ -1,0 +1,48 @@
+.landingcontainer{
+  text-align: center;
+  display: flex;
+  margin-top:0;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  list-style: none;
+  background:map-get($colors, nocolor); 
+  height: 100%;
+  background-image: url("../images/South-Africa-Safari.jpg");
+
+
+.brownbox{
+  background-color: #916c55;
+  margin-bottom: 20px;
+  height: 300px;
+  opacity: 0.8;
+  color:white; 
+  list-style: none;
+  text-decoration: none;
+
+}
+.fa-hand-peace-o{
+  color:red;
+}
+
+.whitebox {
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 20px;
+  border-radius: 5px;
+  width: 250px;
+  height: 150px;
+  background-color: white;
+  color:red; 
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  list-style: none;
+
+}
+
+
+
+}
+
+

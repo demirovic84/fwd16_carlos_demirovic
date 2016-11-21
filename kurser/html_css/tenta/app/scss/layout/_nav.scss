@@ -20,6 +20,112 @@ html {
     }
 }
 
+.top-nav{
+  display: flex;
+  flex:1;
+  flex-direction:row;
+  justify-content: center;
+  
+  @include respond-to('medium') {
+     flex: 1  45%;
+     flex-direction: row;
+     }
+}
+.price-img {
+	display: flex;
+  flex: 1;
+  list-style: none;
+  margin-top: 20px;
+  justify-content: center;
+  padding:40px;
+  border-radius: 100%;
+  border-color: 2px solid red;
+
+  @include respond-to('medium') {
+     flex: 1  45%;
+     flex-direction: row;
+     }
+
+}
+.price1, .price2, .price3{
+	@extend %top-img;
+  border-radius: 100%;
+  border: 3px solid red;
+  margin-left: 50px;
+  text-align: center;
+  flex-direction: row;
+
+     @include respond-to('medium') {
+     flex: 1 1 45%;
+     flex-direction: row;
+     }
+
+}
+.price-text1, .price-text2, .price-text3{
+  color:red;
+  font-weight: 600;
+}
+
+.foot1, .foot3{
+  background-color: map-get($colors , brown);
+  color:white;
+  text-align: center;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  background-color: darkorange;
+}
+.social {
+    
+    display: none;
+
+   @include respond-to('large') {
+
+    display: flex;
+    flex-direction: row;
+    padding: 0 5px 0 5px;
+    width: 480px;
+    order:-1;
+    align-content:flex-end;
+    align-items: baseline;
+    padding:0;
+    margin:0;
+    order:2;
+    margin-top: 50px;
+
+    
+    }
+.social-top {
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+  flex-direction: row;
+  color: map-get($colors ,header);
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  top:0;
+
+}
+.kill{
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+  flex-direction: row;
+    justify-content: center;
+  align-content: center;
+  align-items: center;
+  top:0;
+}
+.tribal{
+  height: 50px;
+  width: 70px;
+}
+
+}
 input#show-menu {
     display: none;
     &:checked {
@@ -32,7 +138,6 @@ input#show-menu {
 
 h4{
 font-size: 1em;
-// margin-left: -30px;
 @include respond-to('large'){
 margin-left: 0px;
 }
@@ -62,32 +167,24 @@ padding-top: 0px;
 }
 
 
-.fa-arrow-circle-down{
-  color: map-get($colors , black);
-  margin-left: 7px;
-}
-
 
 
 .megamenu{
     text-transform: uppercase;
-    background-color:map-get($colors, black);
+    background-color:map-get($colors, white);
     box-shadow: 0px 2px 8px  map-get($colors , white);
-    border-bottom-left-radius: 2%;
-    border-bottom-right-radius: 2%;
     display:none;
-    position: static;
-    top:43px;
+    //position: static;
+    top:113px;
     z-index: 9999;
+    
     
 
     @include respond-to('large'){
     position:absolute;
-    
     width: 100%;
     left: 0;
-  
-    justify-content:space-around;
+    justify-content:flex-start;
        ul{
           flex:none;
         li{
@@ -96,7 +193,7 @@ padding-top: 0px;
           text-align: left;
           
          a{
-          color: map-get($colors, red);
+          color: map-get($colors, purple);
           flex:none;
           font-size: 1em;
       
@@ -106,11 +203,12 @@ padding-top: 0px;
   }
 }
 
+
 nav > ul {
-    background-color:map-get($colors, twitter);
+    background-color:map-get($colors, brown);
     display: none;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -119,30 +217,28 @@ nav > ul {
     
     @include respond-to('medium') {
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     
     }
     
     @include respond-to('large'){
     display:flex;
-    flex: 1 1 100%;
+    flex: 1;
     flex-direction: row;
     padding: 15px;
     }
         //Dropdown Titel
         li {
           
-        color: map-get($colors, twitter);
+        color: map-get($colors, black);
         flex: 1;
         width: 100%;
         flex-direction: column;
         display: block;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+        justify-content: flex-start;
         
         @include respond-to('medium') {
-        text-align: center;
+        //text-align: center;
         }
         
         @include respond-to('large') {
@@ -153,16 +249,19 @@ nav > ul {
             a, label {
 
             font-size: 1em;
+            justify-content: flex-start;
             text-decoration: none;
-            text-align: center;
             text-transform: uppercase;
-            font-weight: bold;
             flex: 1;
             color:map-get($colors, white);
-            padding: 5px 5px;
+            margin-top: 65px;
+            
             
             &:hover {
-            color:map-get($colors, red);
+            color:map-get($colors, black);
+
+            
+            
          }
       }
    }

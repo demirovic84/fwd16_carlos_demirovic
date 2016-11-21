@@ -1,0 +1,20 @@
+.footer {
+	bottom: 0;
+	display: flex;
+	box-shadow: 5px 8px 5px 5px solid black;
+	text-decoration: none;
+	list-style: none;
+
+}
+.foot1, .foot2, .foot3 {
+	@extend %footer-style;
+    background-color:map-get($colors, brown); 
+	margin-top: 10px;
+
+
+	li a {
+    color:map-get($colors, white); 
+
+	}
+}
+
