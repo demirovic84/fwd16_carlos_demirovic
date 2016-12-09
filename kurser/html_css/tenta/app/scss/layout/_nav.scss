@@ -11,23 +11,14 @@ html {
 
 
 
-.hamburger{
-  display: inline-block;
+.bars{
+  display:block;
   cursor: pointer;
-  margin: 10px;
-    
-    &:after{
-        @extend %hamburger;
-        position:absolute;
-        right:20px;
-        top:60px;
+  margin-top: -45px;
+  margin-left: 20px;
+  @include respond-to('large'){
+  display:none;
     }
-    
-    @include respond-to('large'){
-        display:none;
-    }
-    
-    
 }
 
 input#show-menu {
@@ -35,9 +26,10 @@ input#show-menu {
     &:checked {
         ~ nav > ul {
             display: flex;
-        }
+            flex: 1 1 100%;
         }
     }
+}
 
 
 #headcontain{
@@ -52,9 +44,10 @@ input#show-menu {
    header{
       background: map-get($colors, brown) url('../images/binding-dark.png');
       display: flex;
+      margin-top: 0px;
       justify-content: center;
       align-items: baseline;
-       
+   
 
       > div {
          padding: 0 px;
@@ -65,7 +58,6 @@ input#show-menu {
          display: flex;
          align-items: center;
          justify-content: center;
-
          
 
          div{
@@ -96,7 +88,7 @@ input#show-menu {
         order:3;
          }
          img{
-            width: 50px;
+            width: 75px;
          }
       }
    }
@@ -106,7 +98,7 @@ input#show-menu {
 	display: flex;
   flex: 1 1 50%;
   list-style: none;
-  margin-top: 50px;
+  margin-top: 100px;
   justify-content: center;
   border-radius: 50%;
   border-color: 2px solid red;
@@ -240,7 +232,7 @@ padding-top: 0px;
     box-shadow: 0px 2px 8px  map-get($colors , white);
     display:none;
     //position: static;
-    top:113px;
+    top:168px;
     z-index: 9999;
     
     
@@ -332,7 +324,7 @@ nav > ul {
       }
     }
       
-   input#submenu_toggle{
+input#submenu_toggle{
     display: none;
     &:checked ~ .megamenu {
         display:block;
