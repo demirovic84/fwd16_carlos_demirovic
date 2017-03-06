@@ -1,0 +1,150 @@
+html, body {
+    font: 16px Arial;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100%
+}
+
+html {
+    height: 100%;
+    overflow: scroll;
+}
+
+body {
+    background-repeat: repeat;
+    background: url(../img/bg.png) no-repeat;
+    background-size: 3000px;
+}
+
+/*Top logo*/
+#logo{
+    margin-top: 0px;
+}
+
+/*The board of the game*/
+div#memory_board{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    align-content: flex-start;
+    flex-flow: row wrap;
+    max-width: 750px;
+    background:transparent;
+    width: 690px;
+    height: 575px;
+    padding: 24px;
+    margin: 0px auto;
+    margin-top: -40px;
+}
+
+/*The board tiles*/
+div#memory_board > div{
+    background: url("../img/masha.png") center no-repeat;
+    background-size: 92px 92px;
+    border: #000 2px solid;
+    border-radius: 8px;
+    width:51px;
+	height:51px;
+	float:left;
+	margin:10px;
+	padding:20px;
+	font-size:54px;
+	cursor:pointer;
+	text-align:center;
+}
+
+
+/*Hover on tile*/
+div#memory_board >div:hover {
+	top: -4px;
+	box-shadow: 0 15px 15px rgba(0,0,0,0.5);
+}
+
+/*Box for counting collected pairs*/
+#pairs{
+    order: 1;
+    border: 3px solid black;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    width: 200px;
+    height: 30px;
+    font-size: 18px;
+    font-family: sans-serif;
+    line-height: 30px;
+    border-color: orangered;
+}
+
+/*Box for counting tries*/
+#tries{
+    order: 3;
+    border: 3px solid black;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    width: 200px;
+    height: 30px;
+    font-size: 18px;
+    font-family: sans-serif;
+    line-height: 30px;
+    border-color: orangered;
+
+}
+
+/*Restart button*/
+#myBtn {
+    order: 2;
+    width: 207px;
+    height: 50px;
+    padding: 0 50px;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    background-color: black;
+    border: black 3px solid;
+    display: inline-block;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    border-color: orangered;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+/*Hover on restart button*/
+#myBtn:hover {
+    cursor: pointer;
+    background-color: red;
+}
+
+/*The indexing box under game*/
+#dev{
+    height: auto;
+    width: auto;
+    color: black;
+    border: 5px solid;
+    border-color: darkturquoise;
+    border-radius: 15px;
+    margin: 170px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/*Indexing box title*/
+#swap{
+    color:darkturquoise;
+    font-size: 2em;
+    margin-top: 250px;}
+
+/*Boxes under the game*/
+#boxes{
+    display: flex;
+    align-content: space-between;
+    align-items: baseline;
+    justify-content: center;
+    margin: -120px;
+}

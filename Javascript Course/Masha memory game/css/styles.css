@@ -1,0 +1,56 @@
+
+.g-game__card-group {
+/*   border: 10px solid gray; */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* entire container, keeps perspective */
+.g-game__card-container {
+  padding: 10px;
+	/*perspective: 1000px;*/
+}
+	.g-game__card-container.flipped
+  .g-game__card {
+		transform: rotateY(180deg);
+	}
+
+.g-game__card-container,
+.g-game__card-image--back,
+.g-game__card-image--front {
+  width: 150px;
+  height: 150px;
+}
+
+.g-game__card {
+	transition: 0.8s;
+	transform-style: preserve-3d;
+	position: relative;
+  background-color: red;
+  width: 160px;
+}
+
+.g-game__card-image--back,
+.g-game__card-image--front {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.g-game__card-image--back {
+	z-index: 2;
+  border: 5px solid black;
+  -webkit-transform: rotate(0deg);
+	transform: rotateY(0deg);
+}
+
+.g-game__card-image--front {
+  border: 5px solid black;
+  -webkit-transform: rotate(180deg);
+	transform: rotateY(180deg);
+}
+
+.matched img {
+  background-color: mediumvioletred;
+}

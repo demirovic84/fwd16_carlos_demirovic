@@ -154,7 +154,7 @@ console.log(person.fatty());
 //######## Question 4 ########
 
 
-
+/*
 function Dog(breed, name, colour, bark) {
 
 this.breed = breed;
@@ -173,5 +173,74 @@ var dog1 = new Dog("Bulldog", "Bruce", "white", "MJAU");
 
 console.log("Name: " + dog1.dogName, "Breed: " + dog1.breed, "Colour " + dog1.colour, dog1.bark);
 
+*/
 
+//Regular expressions
+
+//Question 1
+//Uppercase to lowercase
+/*
+var string = "LETS TRY THIS OUT NOW!!",
+    regex = /\b[A-Z]{2,}\b/g;
+
+var modified = string.replace(regex, function (match) {
+    "use strict"
+    return match.toLowerCase();
+});
+
+console.log(modified);
+alert(modified);
+*/
+
+//Question 4
+//Q = Valid swedish postcode (5 digits)
+//var string1 = prompt("Enter your numbers");
+//var myString = string1.replace(/\D/g, "");
+
+//console.log(myString);
+
+
+
+/*
+//Question 3
+// Q = Enter a valid creditcardnumber (13 digits)
+
+myString = prompt("Enter your creditcard number");
+
+var re = /^4[0-9]{12}(?:[0-9]{3})?$/;
+
+if (re.test(myString)) {
+
+alert("OK! Yoy are ready to shop");
+console.log("OK! Yoy are ready to shop");
+
+} else {
+
+alert("Not a valid creditcar number, go home");
+console.log("Not a valid creditcar number, go home");
+
+}
+*/
+
+/*
+//Question 4
+//Q = Valid swedish postcode (5 digits)
+myPostcode = prompt("Enter your postcode");
+
+var code = /^\d{5}$/;
+
+if (code.test(myPostcode)) {
+
+
+alert("Great, valid postcode");
+console.log("Great, valid postcode");
+
+} else {
+
+alert("Not a valid postcode");
+console.log("Not a valid postcode");
+
+
+}
+*/
 
